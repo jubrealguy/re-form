@@ -1,3 +1,199 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgba(128, 128, 128, 0.056);
+    font-family: Helvetica;
+    color: #232323;
+}
+
+.events {
+    margin: 5rem 7.5rem;
+}
+
+.header__primary {
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 5.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.event__info {
+    background: #FFFFFF;
+    padding: 4.4rem 3.9rem;
+    gap: 10px;
+    border-radius: 2.4rem;
+    margin-right: 10rem;
+    margin-bottom: 6rem;
+}
+
+.event__info--head {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.6rem;
+    margin-bottom: 3.5rem;
+}
+
+.event__info--body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11.5rem;
+}
+
+.event__img {
+    width: 42.6rem;
+    border-radius: 2rem;
+}
+
+.event__details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7rem;
+}
+
+.event__details--head {
+    font-size: 5.5rem;
+    font-weight: 400;
+    line-height: 6.3rem;
+    color: #324162;
+}
+
+.event__details--body {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+    color: #697694;
+}
+
+.event__details--register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.register__link {
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0.02em;
+    color: #E1FFFE;
+    background: #0AB1A9;
+    padding: .8rem 1.6rem;
+    border-radius: .8rem;
+}
+
+.register__date {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.02em;
+    color: #464343;
+}
+
+.event__form {
+    margin: 0 auto;
+    background: #ffffff;
+    width: 85rem;
+    padding: 3rem;
+    gap: 21px;
+    border-radius: 2.4rem;
+}
+
+.event__form--head {
+    text-align: center;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 5.5rem;
+    color: #1E1E1E;
+    margin-bottom: 5rem;
+}
+
+.event__form--steps {
+    font-family: Helvetica;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    color: #181818;
+    margin-bottom: 2rem;
+}
+
+.event__form--guide {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.7rem;
+    color: #575F6E;
+    margin-bottom: 3rem;
+}
+
+.form__box {
+    padding: 2rem;
+    border-radius: 1.6rem;
+    border: .125rem solid #E2E4E5;
+    margin-bottom: 2.5rem;
+}
+
+.form__label {
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 3.5rem;
+    color: #242426;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.form__input {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.24rem;
+    width: 80%;
+    padding: .3rem 1rem;
+    border: none;
+    color: #575F6E;
+}
+
+.form__edit {
+    font-size: 1.25rem;
+    color: #3FC8C2;
+}
+
+.form__button {
+    display: block;
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 3.6rem;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background: #0AB1A9;
+    padding: 0 7.5rem;
+    border-radius: .8rem;
+    border: none;
+    margin: 0 auto;
+}
+
+.event__conference {
+    display: flex;
+}
