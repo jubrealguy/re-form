@@ -3,6 +3,7 @@
 @tailwind utilities; */
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 *, *::after, *::before {
     margin: 0;
@@ -196,4 +197,146 @@ body {
 
 .event__conference {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13rem;
+    padding: 0 7.5rem;
+    margin-top: 10rem;
+}
+
+.conference__head {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.76rem;
+    color: #FA815C;
+    margin-bottom: 1rem;
+}
+
+.conference__date {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+    color: #0AB1A9;
+    margin-bottom: 1rem;
+}
+
+.conference__body {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.3rem;
+    color: #202124;
+    margin-bottom: 2rem;
+}
+
+.conference__share {
+    text-decoration: none;
+    width: 12.5rem;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #0AB1A9;
+    color: #FFFFFF;
+    padding: .75rem 2rem;
+}
+
+.conference__share .sharenodes {
+    font-size: 1.95rem;
+}
+
+.conference__share span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+}
+
+.event__conference--img {
+    width: 44.5rem;
+}
+
+.event__past {
+    margin-top: 10rem;
+}
+
+.event__past h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.6rem;
+    text-align: center;
+    margin-bottom: 3rem; 
+}
+
+.event__table {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tablerow {
+    display: flex;
+}
+
+.table__head .tablerow {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    color: #464343;
+    background-color: #FF9E81;
+    margin-bottom: 2rem;
+}
+
+.table__head .tablerow th:first-child {
+    margin-right: auto;
+}
+
+.table__head .tablerow th:last-child {
+    margin-left: 7rem;
+}
+
+.table__body .tablerow {
+    justify-content: space-between;
+    background: #FFFFFFF2;
+    margin: 1rem 1.5rem;
+    padding: 1rem 2rem;
+}
+
+.table__body .tablerow td {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.event__sponsor {
+    margin-top: 10rem;
+    color: #464343;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event__sponsor h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.6rem;
+    margin-bottom: 2rem;
+}
+
+.event__sponsor img {
+    width: 28rem;
+    height: 13.4rem;
+    margin-bottom: 4rem;
+}
+
+.event__sponsor a {
+    text-decoration: none;
+    color: inherit;
+    background: #FCD884;
+    border-radius: .8rem;
+    padding: 1rem 3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+
 }

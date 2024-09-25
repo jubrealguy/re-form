@@ -3,6 +3,7 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import reform_img from './img/reform_img.png'
 import conference_img from './img/conference_img.png'
+import kids_img from './img/kids_image.png'
 
 const Event = () => {
     return (
@@ -66,9 +67,50 @@ const Event = () => {
                     <h4 className='conference__head'>Teachers Conference</h4>
                     <p className='conference__date'>3rd of October 2024 | On site</p>
                     <p className='conference__body'>Invite Fellow teachers, Childcare practitioners, school administrators, parents e.t.c</p>
-                    <a href='##' className='conference__share'><FontAwesomeIcon icon={faShareNodes} />Share</a>
+                    <a href='##' className='conference__share'><FontAwesomeIcon icon={faShareNodes} className='sharenodes' /><span>Share</span></a>
                 </div>
-                <img src={conference_img} alt='' />
+                <img src={conference_img} alt='' className='event__conference--img' />
+            </div>
+
+            <div className='event__past'>
+                <h3>Past Events</h3>
+                <table className='event__table'>
+                    <thead className='table__head'>
+                        <tr className='tablerow'>
+                            <th>Past Events are listed in chronological order by date.</th>
+                            <th>Filter</th>
+                            <th>Event location</th>
+                        </tr>
+                    </thead>
+                    <tbody className='table__body'>
+                        <tr className='tablerow'>
+                            <td>2nd October, 2023</td>
+                            <td>Ogun state, Nigeria.</td>
+                        </tr>
+                        <tr className='tablerow'>
+                            <td>2nd October, 2023</td>
+                            <td>Ogun state, Nigeria.</td>
+                        </tr>
+                        <tr className='tablerow'>
+                            <td>2nd October, 2023</td>
+                            <td>Ogun state, Nigeria.</td>
+                        </tr>
+                        <tr className='tablerow'>
+                            <td>2nd October, 2023</td>
+                            <td>Ogun state, Nigeria.</td>
+                        </tr>
+                        <tr className='tablerow'>
+                            <td>2nd October, 2023</td>
+                            <td>Ogun state, Nigeria.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div className='event__sponsor'>
+                <h3>Meet Our Sponsors</h3>
+                <img src={kids_img} alt='' />
+                <a href='##'>Become a Sponsor</a>
             </div>
         </div>
     )
