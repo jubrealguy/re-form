@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,26 @@ import conference_img from './img/conference_img.png'
 import kids_img from './img/kids_image.png'
 
 const Event = () => {
+    const [form, setForm] = useState({
+        first: "",
+        last: "",
+        email: "",
+        number: "",
+    })
+
+    const onChange = (e) => {
+        const {value, name} = e.target
+        setForm((state) => ({
+          ...state
+        }))
+      }
+    
+      const submit = (e) => {
+        e.preventDefault()
+        console.log(form);
+      }
+
+
     return (
         <div className="events">
             <h2 className="header__primary">REFORM TEACHERS CONFERENCE</h2>
@@ -30,37 +51,48 @@ const Event = () => {
 
             <form className="event__form">
                 <h3 className='event__form--head'>REGISTATION FORM</h3>
+                <div className='event__form--figure'><span></span><span></span><span></span><span></span><span></span></div>
                 <p className='event__form--steps'>Steps</p>
                 <p className='event__form--guide'>Fill in the registration data to secure  a sit for the Teacher’s conference.</p>
                 <div className='form__box'>
                     <label htmlFor='first' className='form__label'>First Name</label>
                     <div className='input-box'>
-                        <input type='text' id='first' placeholder='John' className='form__input' />
+                        <input type='text' name='first' id='first' value={form.first} onChange={onChange} placeholder='John' className='form__input' />
                         <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
                     </div>
                 </div>
                 <div className='form__box'>
                     <label htmlFor='last' className='form__label'>Last Name</label>
                     <div className='input-box'>
-                        <input type='text' id='last' placeholder='Doe' className='form__input' />
+                        <input type='text' name='last' id='last' value={form.last} onChange={onChange} placeholder='Doe' className='form__input' />
                         <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
                     </div>
                 </div>
                 <div className='form__box'>
                     <label htmlFor='email' className='form__label'>Email</label>
                     <div className='input-box'>
-                        <input type='email' id='email' placeholder='abc@mail.xyz' className='form__input' />
+                        <input type='email' name='email' value={form.email} onChange={onChange} id='email' placeholder='abc@mail.xyz' className='form__input' />
                         <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
                     </div>
                 </div>
                 <div className='form__box'>
                     <label htmlFor='phone' className='form__label'>Phone Number</label>
                     <div className='input-box'>
-                        <input type='number' id='phone' placeholder='+234' className='form__input' />
+                        <input type='number' name='phone' value={form.number} onChange={onChange} id='phone' placeholder='+234' className='form__input' />
                         <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
                     </div>
                 </div>
-                <button className='form__button'>Submit</button>
+                <div className='form__box'>
+                    <label htmlFor="options">Choose an option:</label>
+                    <select class="form-select bottom-small" aria-label="Default select example">
+                        <option selected>Country</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="UK">UK</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                </div>
+                <button className='form__button' onClick={submit}>Submit</button>
             </form>
 
             <div className='event__conference'>
