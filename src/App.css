@@ -15,6 +15,18 @@ html {
     font-size: 62.5%;
 }
 
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 55%;
+    }
+}
+
 body {
     background: rgba(128, 128, 128, 0.056);
     font-family: Helvetica;
@@ -22,7 +34,7 @@ body {
 }
 
 .events {
-    margin: 5rem 7.5rem;
+    margin: 5rem 6.5rem;
 }
 
 .header__primary {
@@ -35,10 +47,10 @@ body {
 
 .event__info {
     background: #FFFFFF;
-    padding: 4.4rem 3.9rem;
+    padding: 4.5rem 3rem;
     gap: 10px;
     border-radius: 2.4rem;
-    margin-right: 10rem;
+    margin-right: 5rem;
     margin-bottom: 6rem;
 }
 
@@ -49,16 +61,56 @@ body {
     margin-bottom: 3.5rem;
 }
 
+@media screen and (max-width: 500px) {
+    .header__primary {
+        font-size: 3.2rem;
+    }
+
+    .event__info--head {
+        font-size: 2.8rem;
+    }
+}
+
 .event__info--body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 11.5rem;
+    gap: 7.5rem;
 }
 
 .event__img {
     width: 42.6rem;
     border-radius: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .events {
+        margin: 5rem 3.5rem;
+    }
+
+    .event__info {
+        margin-right: 0;
+    }
+
+    .event__info--body {
+        gap: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .event__info {
+        padding: 4rem 3rem;
+    }
+
+    .event__info--body {
+        flex-direction: column;
+        text-align: center;
+        gap: 7.5rem;
+    }
+
+    .event__img {
+        width: 100%;
+    }
 }
 
 .event__details {
@@ -72,6 +124,17 @@ body {
     font-weight: 400;
     line-height: 6.3rem;
     color: #324162;
+}
+
+@media screen and (max-width: 500px) {
+    .event__details--head {
+        font-size: 4rem;
+        line-height: 5.4rem;
+    }
+
+    .event__info--head {
+        font-size: 2.8rem;
+    }
 }
 
 .event__details--body {
@@ -109,13 +172,36 @@ body {
     color: #464343;
 }
 
+@media screen and (max-width: 800px) {
+    .event__details--register {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .register__link {
+        font-size: 1rem;
+    }
+}
+
 .event__form {
     margin: 0 auto;
     background: #ffffff;
-    width: 85rem;
+    width: 60%;
     padding: 3rem;
     gap: 21px;
     border-radius: 2.4rem;
+}
+
+@media screen and (max-width: 900px) {
+    .event__form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .event__form {
+        width: 97.5%;
+    }
 }
 
 .event__form--head {
@@ -195,6 +281,37 @@ body {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 500px) {
+    .event__form--head {
+        font-size: 3rem;
+    }
+
+    .event__form--steps {
+        font-size: 3rem;
+    }
+
+    .event__form--guide {
+        font-size: 1.6rem;
+    }
+
+    .form__box {
+        padding: 1.2rem;
+    }
+
+    .form__label {
+        font-size: 1.8rem;
+    }
+
+    .form__input {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    
+    .form__edit {
+        font-size: 1rem;
+    }
+}
+
 .event__conference {
     display: flex;
     justify-content: center;
@@ -255,6 +372,23 @@ body {
     width: 44.5rem;
 }
 
+@media screen and (max-width: 1050px) {
+    .event__conference {
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .event__conference {
+        padding: 0 2.5rem;
+        flex-direction: column;
+    }
+
+    .event__conference--img {
+        width: 90%;
+    }
+}
+
 .event__past {
     margin-top: 10rem;
 }
@@ -290,8 +424,25 @@ body {
     margin-right: auto;
 }
 
+.table__head .tablerow th:nth-child(2) {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 400;
+}
+
 .table__head .tablerow th:last-child {
     margin-left: 7rem;
+}
+
+@media screen and (max-width: 800px) {
+    .table__head .tablerow th:first-child span {
+        display: none;
+    }
+
+    .table__head .tablerow th:nth-child(2) {
+        display: none;
+    }
 }
 
 .table__body .tablerow {
@@ -323,7 +474,14 @@ body {
     margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 800px) {
+    .event__sponsor h3 {
+        font-size: 3rem;
+    }
+}
+
 .event__sponsor img {
+    text-align: center;
     width: 28rem;
     height: 13.4rem;
     margin-bottom: 4rem;
@@ -338,5 +496,4 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 2.8rem;
-
 }

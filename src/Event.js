@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import reform_img from './img/reform_img.png'
 import conference_img from './img/conference_img.png'
 import kids_img from './img/kids_image.png'
@@ -77,8 +78,8 @@ const Event = () => {
                 <table className='event__table'>
                     <thead className='table__head'>
                         <tr className='tablerow'>
-                            <th>Past Events are listed in chronological order by date.</th>
-                            <th>Filter</th>
+                            <th>Past Events <span>are listed in chronological order by date.</span></th>
+                            <th><FontAwesomeIcon icon={faFilter} /><span>Filter:</span></th>
                             <th>Event location</th>
                         </tr>
                     </thead>
