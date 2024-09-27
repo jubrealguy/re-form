@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
@@ -6,27 +6,81 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import reform_img from './img/reform_img.png'
 import conference_img from './img/conference_img.png'
 import kids_img from './img/kids_image.png'
+import DropdownWithCheckboxes from './dropdown';
 
 const Event = () => {
     const [form, setForm] = useState({
         first: "",
         last: "",
         email: "",
-        number: "",
+        tel: "",
+        attendingAs: "",
     })
+
+    const [isValid, setIsValid] = useState(false)
+    const [errors, setErrors] = useState({})
+
+    const firstNameRef = useRef(null);
+    const lastNameRef = useRef(null);
+    const emailRef = useRef(null);
+    const telRef = useRef(null);
 
     const onChange = (e) => {
         const {value, name} = e.target
         setForm((state) => ({
-          ...state
+          ...state,
+          [name]: value
         }))
       }
+
+      const handleDropdownChange = (selectedItem) => {
+        setForm((prevForm) => ({
+          ...prevForm,
+          attendingAs: selectedItem,
+        }));
+      };
+
+      const handleFocus = (ref) => ref.current.focus();
     
       const submit = (e) => {
         e.preventDefault()
+        const newErrors = {};
+        if (!form.first) newErrors.first = "First Name is required";
+        if (!form.last) newErrors.last = "Last Name is required";
+        if (!form.email) newErrors.email = "Email is required";
+        if (!form.tel) newErrors.tel = "Phone Number is required";
+        if (!form.attendingAs) newErrors.attendingAs = "Please select how you are attending";
+    
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors); // Set errors if validation fails
+            setIsValid(false);
+            return;
+        }
+        setIsValid(true);
         console.log(form);
+
+        setForm({
+            first: "",
+            last: "",
+            email: "",
+            tel: "",
+            attendingAs: "",
+        });
+        setErrors({});
       }
 
+      const cancel = () => {
+        setIsValid(false)
+    }
+
+
+      const valid = () => {return (
+      <div className='valid'>
+        <span>&#10003;</span>
+        <p>Application Submited</p>
+        <span onClick={cancel}>&times;</span>
+    </div>
+    )}
 
     return (
         <div className="events">
@@ -57,42 +111,41 @@ const Event = () => {
                 <div className='form__box'>
                     <label htmlFor='first' className='form__label'>First Name</label>
                     <div className='input-box'>
-                        <input type='text' name='first' id='first' value={form.first} onChange={onChange} placeholder='John' className='form__input' />
-                        <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
+                        <input type='text' name='first' id='first' value={form.first} onChange={onChange} placeholder='John' ref={firstNameRef} className='form__input' required />
+                        <FontAwesomeIcon icon={faPencilAlt} onClick={() => handleFocus(firstNameRef)} className='form__edit' />
                     </div>
                 </div>
+                {errors.first && <span className='error-message'>{errors.first}!!!</span>}
                 <div className='form__box'>
                     <label htmlFor='last' className='form__label'>Last Name</label>
                     <div className='input-box'>
-                        <input type='text' name='last' id='last' value={form.last} onChange={onChange} placeholder='Doe' className='form__input' />
-                        <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
+                        <input type='text' name='last' id='last' value={form.last} onChange={onChange} placeholder='Doe' ref={lastNameRef} className='form__input' required />
+                        <FontAwesomeIcon icon={faPencilAlt} onClick={() => handleFocus(lastNameRef)} className='form__edit' />
                     </div>
                 </div>
+                {errors.last && <span className='error-message'>{errors.last} ! ! !</span>}
                 <div className='form__box'>
                     <label htmlFor='email' className='form__label'>Email</label>
                     <div className='input-box'>
-                        <input type='email' name='email' value={form.email} onChange={onChange} id='email' placeholder='abc@mail.xyz' className='form__input' />
-                        <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
+                        <input type='email' name='email' value={form.email} onChange={onChange} id='email' placeholder='abc@mail.xyz' ref={emailRef} className='form__input' required />
+                        <FontAwesomeIcon icon={faPencilAlt} onClick={() => handleFocus(emailRef)} className='form__edit' />
                     </div>
                 </div>
+                {errors.email && <span className='error-message'>{errors.email} ! ! !</span>}
                 <div className='form__box'>
-                    <label htmlFor='phone' className='form__label'>Phone Number</label>
+                    <label htmlFor='tel' className='form__label'>Phone Number</label>
                     <div className='input-box'>
-                        <input type='number' name='phone' value={form.number} onChange={onChange} id='phone' placeholder='+234' className='form__input' />
-                        <FontAwesomeIcon icon={faPencilAlt} className='form__edit' />
+                        <input type='tel' name='tel' value={form.tel} onChange={onChange} id='tel' placeholder='+234' ref={telRef} className='form__input' required />
+                        <FontAwesomeIcon icon={faPencilAlt} onClick={() => handleFocus(telRef)} className='form__edit' />
                     </div>
                 </div>
-                <div className='form__box'>
-                    <label htmlFor="options">Choose an option:</label>
-                    <select class="form-select bottom-small" aria-label="Default select example">
-                        <option selected>Country</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="UK">UK</option>
-                        <option value="USA">USA</option>
-                        <option value="Canada">Canada</option>
-                    </select>
-                </div>
+                {errors.tel && <span className='error-message'>{errors.tel} ! ! !</span>}
+
+                <DropdownWithCheckboxes handleDropdownChange={handleDropdownChange} />
+                {errors.attendingAs && <span className='error-message'>{errors.attendingAs} ! ! !</span>}
+
                 <button className='form__button' onClick={submit}>Submit</button>
+                {isValid && valid()}
             </form>
 
             <div className='event__conference'>
