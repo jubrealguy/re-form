@@ -6,6 +6,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import reform_img from './img/reform_img.png'
 import conference_img from './img/conference_img.png'
 import kids_img from './img/kids_image.png'
+import google from './img/Calendar.png'
 import DropdownWithCheckboxes from './dropdown';
 
 const Event = () => {
@@ -147,6 +148,11 @@ const Event = () => {
                 <button className='form__button' onClick={submit}>Submit</button>
                 {isValid && valid()}
             </form>
+
+            <a href='https://calendar.google.com/calendar' className='google__link' target='_blank' rel='noopener noreferrer'>
+                <img src={google} alt=''/>
+                <span>Add Event to google calendar</span>
+            </a>
 
             <div className='event__conference'>
                 <div className='event__conference--details'>
