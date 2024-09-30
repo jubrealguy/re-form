@@ -6,7 +6,6 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import reform_img from './img/reform_img.png'
 import conference_img from './img/conference_img.png'
 import kids_img from './img/kids_image.png'
-import google from './img/Calendar.png'
 import DropdownWithCheckboxes from './dropdown';
 
 const Event = () => {
@@ -97,7 +96,7 @@ const Event = () => {
                         <h4 className="event__details--head">Re-form Teacher Conference</h4>
                         <p className="event__details--body">Re-form Conference is an annual gathering of passionate edcators dedicated to advancing the future of teaching and learning,our conference brings together teachers, administrators, and education leaders from around the world to explore innovative strategies, share best practices,</p>
                         <div className="event__details--register">
-                            <a href="##" className="register__link">Register here</a>
+                            <a href="##" className="register__link">Register</a>
                             <p className="register__date">Date: 03 oct 2024</p>
                         </div>
                     </div>
@@ -150,7 +149,7 @@ const Event = () => {
             </form>
 
             <a href='https://calendar.google.com/calendar' className='google__link' target='_blank' rel='noopener noreferrer'>
-                <img src={google} alt=''/>
+                <img src='https://i.imgur.com/UfT3yCQ.png' alt=''/>
                 <span>Add Event to google calendar</span>
             </a>
 
